@@ -14,10 +14,18 @@ import ksmdapija.*;
  */
 public final class TestMdSpi extends CThostFtdcMdSpi
 {
+    private String m_brokerID ;
+    private String m_userID ;
+    private String m_password ;
+
     private CThostFtdcMdApi m_api ;
-    public TestMdSpi( CThostFtdcMdApi api )
+    public TestMdSpi( CThostFtdcMdApi api , String brokerID , String userID , String password )
     {
         this.m_api = api ;
+
+        this.m_brokerID = brokerID ;
+        this.m_userID = userID ;
+        this.m_password = password ;
     }
 
     /**
@@ -31,9 +39,9 @@ public final class TestMdSpi extends CThostFtdcMdSpi
         System.out.println( "OnFrontConnected" ) ;
         //登陆
         CThostFtdcReqUserLoginField userLoginField = new CThostFtdcReqUserLoginField();
-        userLoginField.setBrokerID("6A89B428");
-		userLoginField.setUserID("80008");
-		userLoginField.setPassword("123456");
+        userLoginField.setBrokerID( this.m_brokerID );
+		userLoginField.setUserID( this.m_userID );
+		userLoginField.setPassword( this.m_password );
 
         this.m_api.ReqUserLogin(  Pointer.pointerTo( userLoginField ) , 1 ) ;
     }

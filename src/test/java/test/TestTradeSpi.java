@@ -17,19 +17,25 @@ import kstradeapija.*;
  */
 public class TestTradeSpi extends CThostFtdcTraderSpi
 {
-    private String m_brokerID = "6A89B428" ;
-    private String m_userID = "80008" ;
-    private String m_password = "123456" ;
-    private String m_testInstrumentID = "rb1310" ;
-    private double m_testLimitPrice = 3480.00 ;
+    private String m_brokerID ;
+    private String m_userID ;
+    private String m_password ;
+    private String m_testInstrumentID ;
+    private double m_testLimitPrice ;
     private int m_frontID ;
     private int m_sessionID ;
 
     private CThostFtdcTraderApi m_api ;
 
-    public TestTradeSpi( CThostFtdcTraderApi api )
+    public TestTradeSpi( CThostFtdcTraderApi api , String brokerID , String userID , String password , String testInstrumentID , double testLimitPrice )
     {
         this.m_api = api ;
+
+        this.m_brokerID = brokerID ;
+        this.m_userID = userID ;
+        this.m_password = password ;
+        this.m_testInstrumentID = testInstrumentID ;
+        this.m_testLimitPrice = testLimitPrice ;
     }
 
     /**

@@ -17,7 +17,14 @@ public class TestTrade
     {
         System.out.println( "Start TestTrade------------------------" ) ;
 
-        BridJ.register(CThostFtdcTraderApi.class);    // 必须的
+        String frontAddr = "tcp://221.238.214.89:13159" ;
+        String brokerID = "1ED9282D" ;
+        String userID = "121212" ;
+        String password = "123456" ;
+        String testInstrumentID = "rb1310" ;
+        double testLimitPrice = 3480.00 ;
+
+        BridJ.register( CThostFtdcTraderApi.class ) ;    // 必须的
 
         Pointer<CThostFtdcTraderApi> PointerThostFtdcTraderApi = CThostFtdcTraderApi.CreateFtdcTraderApi( Pointer.pointerToCString( "" ) , false ) ;
         CThostFtdcTraderApi ftdcTraderApi = PointerThostFtdcTraderApi.get( ) ;
@@ -28,7 +35,7 @@ public class TestTrade
          */
         BridJ.protectFromGC( ftdcTraderApi ) ;        // 必须的
 
-        CThostFtdcTraderSpi tradeSpi = new TestTradeSpi( ftdcTraderApi ) ;
+        CThostFtdcTraderSpi tradeSpi = new TestTradeSpi( ftdcTraderApi , brokerID , userID , password , testInstrumentID , testLimitPrice ) ;
 
         /**
          * 如果不加入这段代码，会导致 BridJ类中的public static synchronized Object getJavaObjectFromNativePeer(long peer) {
@@ -38,7 +45,7 @@ public class TestTrade
 
         ftdcTraderApi.RegisterSpi( Pointer.pointerTo( tradeSpi ) ) ;
 
-        ftdcTraderApi.RegisterFront( Pointer.pointerToCString( "tcp://10.253.117.107:13163" ) );
+        ftdcTraderApi.RegisterFront( Pointer.pointerToCString( frontAddr ) );
         ftdcTraderApi.Init();
 
         ftdcTraderApi.Join( ) ;

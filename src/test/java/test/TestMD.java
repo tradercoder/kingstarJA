@@ -20,6 +20,12 @@ public class TestMD
     {
         System.out.println( "Start TestMD------------------------" ) ;
 
+        String frontAddr = "tcp://221.238.214.89:13159" ;
+        String brokerID = "1ED9282D" ;
+        String userID = "121212" ;
+        String password = "123456" ;
+
+
         BridJ.register(CThostFtdcMdApi.class);    // 必须的
 
         Pointer<CThostFtdcMdApi> PointerThostFtdcMdApi = CThostFtdcMdApi.CreateFtdcMdApi( Pointer.pointerToCString( "./log" ) , false
@@ -32,7 +38,7 @@ public class TestMD
          */
         BridJ.protectFromGC( ftdcMdApi ) ;        // 必须的
 
-        CThostFtdcMdSpi mdSpi = new TestMdSpi( ftdcMdApi ) ;
+        CThostFtdcMdSpi mdSpi = new TestMdSpi( ftdcMdApi , brokerID , userID , password ) ;
 
         /**
          * 如果不加入这段代码，会导致 BridJ类中的public static synchronized Object getJavaObjectFromNativePeer(long peer) {
@@ -42,7 +48,7 @@ public class TestMD
 
         ftdcMdApi.RegisterSpi( Pointer.pointerTo( mdSpi ) ) ;
 
-        ftdcMdApi.RegisterFront( Pointer.pointerToCString( "tcp://10.253.117.107:13163" ) );
+        ftdcMdApi.RegisterFront( Pointer.pointerToCString( frontAddr ) );
         ftdcMdApi.Init();
 
         ftdcMdApi.Join( ) ;
