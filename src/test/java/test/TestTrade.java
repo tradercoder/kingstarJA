@@ -38,7 +38,7 @@ public class TestTrade
 
         ftdcTraderApi.RegisterSpi( Pointer.pointerTo( tradeSpi ) ) ;
 
-        ftdcTraderApi.RegisterFront( Pointer.pointerToCString( "tcp://221.238.214.89:13159" ) );
+        ftdcTraderApi.RegisterFront( Pointer.pointerToCString( "tcp://10.253.117.107:13163" ) );
         ftdcTraderApi.Init();
 
         ftdcTraderApi.Join( ) ;

@@ -17,8 +17,8 @@ import kstradeapija.*;
  */
 public class TestTradeSpi extends CThostFtdcTraderSpi
 {
-    private String m_brokerID = "1ED9282D" ;
-    private String m_userID = "121212" ;
+    private String m_brokerID = "6A89B428" ;
+    private String m_userID = "80008" ;
     private String m_password = "123456" ;
     private String m_testInstrumentID = "rb1310" ;
     private double m_testLimitPrice = 3480.00 ;

@@ -42,7 +42,7 @@ public class TestMD
 
         ftdcMdApi.RegisterSpi( Pointer.pointerTo( mdSpi ) ) ;
 
-        ftdcMdApi.RegisterFront( Pointer.pointerToCString( "tcp://221.238.214.89:13159" ) );
+        ftdcMdApi.RegisterFront( Pointer.pointerToCString( "tcp://10.253.117.107:13163" ) );
         ftdcMdApi.Init();
 
         ftdcMdApi.Join( ) ;

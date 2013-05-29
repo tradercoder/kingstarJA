@@ -31,8 +31,8 @@ public final class TestMdSpi extends CThostFtdcMdSpi
         System.out.println( "OnFrontConnected" ) ;
         //登陆
         CThostFtdcReqUserLoginField userLoginField = new CThostFtdcReqUserLoginField();
-        userLoginField.setBrokerID("1ED9282D");
-		userLoginField.setUserID("121212");
+        userLoginField.setBrokerID("6A89B428");
+		userLoginField.setUserID("80008");
 		userLoginField.setPassword("123456");
 
         this.m_api.ReqUserLogin(  Pointer.pointerTo( userLoginField ) , 1 ) ;
