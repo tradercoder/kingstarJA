@@ -20,10 +20,10 @@ public class TestMD
     {
         System.out.println( "Start TestMD------------------------" ) ;
 
-        String frontAddr = "tcp://221.238.214.89:13159" ;
-        String brokerID = "1ED9282D" ;
-        String userID = "121212" ;
-        String password = "123456" ;
+        String frontAddr = "tcp://10.108.10.10:13159" ;	// 需要申请，请修改
+        String brokerID = "111111" ; // 需要申请，请修改
+        String userID = "8008" ;     // 需要申请，请修改
+        String password = "123456" ; // 需要申请，请修改
 
 
         BridJ.register(CThostFtdcMdApi.class);    // 必须的

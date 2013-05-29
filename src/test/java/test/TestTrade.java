@@ -17,10 +17,10 @@ public class TestTrade
     {
         System.out.println( "Start TestTrade------------------------" ) ;
 
-        String frontAddr = "tcp://221.238.214.89:13159" ;
-        String brokerID = "1ED9282D" ;
-        String userID = "121212" ;
-        String password = "123456" ;
+        String frontAddr = "tcp://12.12.12.12:13159" ;	// 需要修改
+        String brokerID = "111111" ;	// 需要修改
+        String userID = "80008" ;	// 需要修改
+        String password = "123456" ;	// 需要修改
         String testInstrumentID = "rb1310" ;
         double testLimitPrice = 3480.00 ;
 
