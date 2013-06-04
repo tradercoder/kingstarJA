@@ -31,7 +31,9 @@ KingStar API Java Adapter ,  for quote datafeed and trade .
 
 
 免责说明:
-	交易有风险，入市须谨慎。
+	交易有风险，入市须谨慎。不负责由此产生的损失。
 
+技术支持：
+	z16304607@163.com
 
 
